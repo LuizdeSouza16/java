@@ -41,6 +41,19 @@ public class Grade {
         }
     }
 
+    public static void insertionSort(Grade[] grades , int numberOfElements)
+    {
+        int arrayLength =  numberOfElements - 1;
+        for (int actual = 0; actual <= arrayLength; actual++)
+        {
+            int analise = actual;
+            while (analise > 0 && grades[analise].getValue() < grades[analise- 1 ].getValue()){
+                swap(grades, analise, analise-1);
+                analise--;
+            }
+        }
+    }
+
     private static void swap(Grade[] grades, int first, int second) {
         Grade firstGrade = grades[first];
         Grade secondGrade = grades[second];

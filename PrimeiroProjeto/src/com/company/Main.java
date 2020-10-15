@@ -16,7 +16,7 @@ public class Main {
 
 	    Grade.showGrades(grades);
 	    System.out.println("---------\n\n");
-        Grade.selectionSort(grades, grades.length);
+        Grade.insertionSort(grades, grades.length);
         Grade.showGrades(grades);
     }
 }
