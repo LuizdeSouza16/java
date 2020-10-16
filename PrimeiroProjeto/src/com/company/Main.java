@@ -3,6 +3,8 @@ package com.company;
 import com.bira.DataStructure;
 import com.bira.Grade;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -20,13 +22,11 @@ public class Main {
         Grade.insertionSort(grades, grades.length);
         Grade.showGrades(grades);
 
-        int[] vector = {4,6,7,3,5,1,2,8};
-        DataStructure.bubbleSort(vector);
+        int[] vector = new int[]{4, 6, 7, 3, 5, 1, 2, 8};
+        DataStructure.selectionSort(vector);
 
-        for (int v : vector){
-            System.out.println("number: " + v);
-        }
-
-
+        Arrays.stream(vector)
+                .mapToObj(v -> v + " ")
+                .forEach(System.out::print);
     }
 }
