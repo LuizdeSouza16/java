@@ -47,7 +47,7 @@ public class Grade {
         for (int actual = 0; actual <= arrayLength; actual++)
         {
             int analise = actual;
-            while (analise > 0 && grades[analise].getValue() < grades[analise- 1 ].getValue()){
+            while (analise > 0 && grades[analise].getValue() < grades[analise- 1].getValue()){
                 swap(grades, analise, analise-1);
                 analise--;
             }

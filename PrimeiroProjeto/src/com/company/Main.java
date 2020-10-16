@@ -1,5 +1,6 @@
 package com.company;
 
+import com.bira.DataStructure;
 import com.bira.Grade;
 
 public class Main {
@@ -18,5 +19,14 @@ public class Main {
 	    System.out.println("---------\n\n");
         Grade.insertionSort(grades, grades.length);
         Grade.showGrades(grades);
+
+        int[] vector = {4,6,7,3,5,1,2,8};
+        DataStructure.bubbleSort(vector);
+
+        for (int v : vector){
+            System.out.println("number: " + v);
+        }
+
+
     }
 }
