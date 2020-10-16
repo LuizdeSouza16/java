@@ -70,5 +70,49 @@ public class DataStructure {
         }
     }
 
+    public static void quickSort(int[] vector, int begin, int end)
+    {
+        if (end > begin){
+            int indexPivot = split(vector, begin, end);
 
+            quickSort(vector, begin, indexPivot -1);
+
+            quickSort(vector, indexPivot +1, end);
+        }
+
+    }
+
+    public static int split(int[] vector, int begin, int end)
+    {
+        int pivot = vector[begin];
+        int pointerLeft = begin + 1;
+        int pointerRight = end;
+
+        while (pointerLeft <= pointerRight) {
+
+            while (pointerLeft <= pointerRight && vector[pointerLeft] <= pivot){
+                pointerLeft++;
+            }
+
+            while (pointerRight >= pointerLeft && vector[pointerRight] > pivot){
+                pointerRight--;
+            }
+
+            if (pointerLeft < pointerRight){
+                swap(vector, pointerRight, pointerLeft);
+                pointerLeft++;
+                pointerRight--;
+
+            }
+        }
+
+        swap(vector, begin, pointerRight);
+        return  pointerRight;
+    }
+
+    public static void swap(int[] vector, int i, int j){
+        int temp = vector[i];
+        vector[i] = vector[j];
+        vector[j] = temp;
+    }
 }

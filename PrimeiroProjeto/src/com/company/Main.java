@@ -22,8 +22,10 @@ public class Main {
         Grade.insertionSort(grades, grades.length);
         Grade.showGrades(grades);
 
-        int[] vector = new int[]{4, 6, 7, 3, 5, 1, 2, 8};
-        DataStructure.selectionSort(vector);
+        int[] vector = { 24, 66, 87, 43, 11, 27, 4, 2, 7, 8, 4, 5,
+                12, 53, 42, 22, 1, 5, 9, 13, 16, 23, 13, 7, 55, 67,
+                92, 22, 33, 27, 19 };
+        DataStructure.quickSort(vector,0 , vector.length -1);
 
         Arrays.stream(vector)
                 .mapToObj(v -> v + " ")
