@@ -110,9 +110,59 @@ public class DataStructure {
         return  pointerRight;
     }
 
-    public static void swap(int[] vector, int i, int j){
+    public static void swap(int[] vector, int i, int j)
+    {
         int temp = vector[i];
         vector[i] = vector[j];
         vector[j] = temp;
+    }
+
+    public static void mergeSort(int[] vector, int begin, int end)
+    {
+        if (begin < end -1){
+
+            int middle = (begin + end) / 2;
+
+            mergeSort(vector, begin, middle);
+
+            mergeSort(vector, middle, end);
+
+            intercala(vector, begin, middle, end);
+        }
+    }
+
+    public static void intercala(int[] vector, int begin, int middle, int end)
+    {
+        int[] newVector = new int[end - begin];
+
+        int i = begin;
+
+        int m = middle;
+
+        int pos = 0;
+
+        while (i < middle && m < end)
+        {
+            if (vector[i] <= vector[m]){
+                newVector[pos] = vector[i];
+                pos++;
+                i++;
+            }else {
+                newVector[pos] = vector[m];
+                pos++;
+                m++;
+            }
+        }
+
+        while (m < end)
+        {
+            newVector[pos] = vector[m];
+            pos++;
+            m++;
+        }
+
+        for (pos = 0, i = begin; i < end; i++,pos++){
+            vector[i] = newVector[pos];
+        }
     }
 }
