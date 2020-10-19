@@ -119,9 +119,10 @@ public class DataStructure {
 
     public static void mergeSort(int[] vector, int begin, int end)
     {
+        int middle;
         if (begin < end -1){
 
-            int middle = (begin + end) / 2;
+            middle = (begin + end) / 2;
 
             mergeSort(vector, begin, middle);
 
@@ -133,7 +134,7 @@ public class DataStructure {
 
     public static void intercala(int[] vector, int begin, int middle, int end)
     {
-        int[] newVector = new int[end - begin];
+        int[] newVector = new int[vector.length];
 
         int i = begin;
 
@@ -145,20 +146,25 @@ public class DataStructure {
         {
             if (vector[i] <= vector[m]){
                 newVector[pos] = vector[i];
-                pos++;
-                i++;
+                pos = pos +1;
+                i = i + 1;
             }else {
                 newVector[pos] = vector[m];
-                pos++;
-                m++;
+                pos = pos +1;
+                m = m+1;
             }
         }
 
+        while (i < middle){
+            newVector[pos] = vector[i];
+            pos = pos + 1;
+            i = i + 1;
+        }
         while (m < end)
         {
             newVector[pos] = vector[m];
-            pos++;
-            m++;
+            pos = pos +1;
+            m = m + 1;
         }
 
         for (pos = 0, i = begin; i < end; i++,pos++){
