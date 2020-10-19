@@ -160,6 +160,7 @@ public class DataStructure {
             pos = pos + 1;
             i = i + 1;
         }
+
         while (m < end)
         {
             newVector[pos] = vector[m];
